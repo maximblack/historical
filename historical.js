@@ -34,6 +34,7 @@ module.exports = function (schema, options) {
     };
 
     var read = function (o, p) {
+        o = o.toObject({ virtuals: false });
         for (var i = 0, a = p.split('.'), l = a.length; i < l; i++) {
             o = o[a[i]];
         }
